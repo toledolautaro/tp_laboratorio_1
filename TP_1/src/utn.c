@@ -31,19 +31,17 @@ int utn_getNumeroFlotante(float* pResultado,char* pMensaje, char* pMensajeError)
 }
 
 
-int menu(int* opcionSeleccionada)
+int menu(int* opcionSeleccionada, float operando1, float operando2)
 {
 	int opcionBuffer;
 	int flagIngresoCorrectoFloat = -1;;
-	float operandoUnoBuffer = 0;
-	float operandoDosBuffer = 0;
 	int retorno = -1;
 
 	do
 	{
 		printf("---Menu calculadora seleccione una opcion del 1 al 5 \n\n");
-		printf("1-Ingresar 1er operando (A=%f) \n", operandoUnoBuffer);
-		printf("2-Ingresar 2do operando (B=%f) \n", operandoDosBuffer);
+		printf("1-Ingresar 1er operando (A=%f) \n", operando1);
+		printf("2-Ingresar 2do operando (B=%f) \n", operando2);
 		printf("3-Calcular todas las operaciones \n");
 		printf("\t a)-Calcular la suma (A+B) \n");
 		printf("\t b)-Calcular la resta (A+B) \n");
@@ -107,7 +105,7 @@ int calcularMultiplicacion(float* pResultado, float operando1, float operando2)
 }
 
 /*Documentar funcion dividir*/
-int calcularDivision(float* pResultado, int operando1, int operando2)
+int calcularDivision(float* pResultado, float operando1, float operando2)
 {
 	int retorno = -1;
 	if(pResultado != NULL && operando2 != 0)

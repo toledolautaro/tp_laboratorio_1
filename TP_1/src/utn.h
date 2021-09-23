@@ -22,7 +22,7 @@ int calcularResta(float* pResultado, float operando1, float operando2);
 
 int calcularMultiplicacion(float* pResultado, float operando1, float operando2);
 
-int calcularDivision(float* pResultado, int operando1, int operando2);
+int calcularDivision(float* pResultado, float operando1, float operando2);
 
 int calcularFactorial(float* pResultado, int operando);
 
