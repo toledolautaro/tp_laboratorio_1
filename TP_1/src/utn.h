@@ -9,12 +9,21 @@
 #define UTN_H_
 
 
-int dividir(float* pResultado, int operando1, int operando2);
+
 
 /*DOCUMENTAR Proto */
-int utn_getNumeroFlotante(float* pResultado,char* pMensaje);
+int utn_getNumeroFlotante(float* pResultado,char* pMensaje, char* pMensajeError);
 
 int menu(int* opcionSeleccionada);
 
+int calcularSuma(float* pResultado, float operando1, float operando2);
+
+int calcularResta(float* pResultado, float operando1, float operando2);
+
+int calcularMultiplicacion(float* pResultado, float operando1, float operando2);
+
+int calcularDivision(float* pResultado, int operando1, int operando2);
+
+int calcularFactorial(float* pResultado, int operando);
 
 #endif /* UTN_H_ */
