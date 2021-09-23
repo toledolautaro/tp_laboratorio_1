@@ -9,9 +9,24 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "utn.h"
+
 
 int main(void) {
+	setbuf(stdout, NULL);
 
+	int opcionSeleccionada;
+	int opcion;
+
+	opcion = menu(&opcionSeleccionada);
+	if(opcion == 0)
+	{
+		printf("Usted seleccionó: %d", opcionSeleccionada);
+	}
+	else
+	{
+		printf("Error");
+	}
 
 
 	return EXIT_SUCCESS;
