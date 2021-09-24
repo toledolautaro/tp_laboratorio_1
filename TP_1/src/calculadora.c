@@ -15,26 +15,26 @@
 int main(void) {
 	setbuf(stdout, NULL);
 
-	int opcionSeleccionada;
-	int opcion;
-	int respuestaPrimerOperando;
-	int respuestaSegundoOperando;
-	int respuestaSuma;
-	int respuestaResta;
-	int respuestaMultiplicacion;
-	int respuestaDivision;
-	int respuestaFactorialPrimerOperando;
-	int respuestaFactorialSegundoOperando;
+	int opcionSeleccionada = 0;
+	int opcion = 0;
+	int respuestaPrimerOperando = 0;
+	int respuestaSegundoOperando = 0;
+	int respuestaSuma = 0;
+	int respuestaResta = 0;
+	int respuestaMultiplicacion = 0;
+	int respuestaDivision = 0;
+	int respuestaFactorialPrimerOperando = 0;
+	int respuestaFactorialSegundoOperando = 0;
 	int flagIngresoPrimerOperando = -1;
 	int flagIngresoSegundoOperando = -1;
-	float primerOperando;
-	float segundoOperando;
-	float resultadoSuma;
-	float resultadoResta;
-	float resultadoMultiplicacion;
+	float primerOperando = 0;
+	float segundoOperando = 0;
+	float resultadoSuma = 0;
+	float resultadoResta = 0;
+	float resultadoMultiplicacion = 0;
 	float resultadoDivision = 0;
-	float resultadoFactorialPrimerOperando;
-	float resultadoFactorialSegundoOperando;
+	float resultadoFactorialPrimerOperando = 0;
+	float resultadoFactorialSegundoOperando = 0;
 
 	do
 	{
@@ -142,7 +142,7 @@ int main(void) {
 					{
 						printf("No se puede hacer factoriales de numeros negativos \n");
 					}
-					if(respuestaFactorialPrimerOperando == 0)
+					if(respuestaFactorialSegundoOperando == 0)
 					{
 						printf("El factorial de %.2f! es: %.2f \n", segundoOperando, resultadoFactorialSegundoOperando);
 					}
@@ -164,6 +164,7 @@ int main(void) {
 					break;
 			}
 		}
+		printf("\n\n\n\n\n");
 	}while(opcionSeleccionada != 5);
 
 

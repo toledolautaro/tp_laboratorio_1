@@ -63,7 +63,7 @@ int menu(int* opcionSeleccionada, float operando1, float operando2)
 		printf("4- Informar resultados \n");
 		printf("5- Salir \n\n");
 
-		printf("\n Seleccione del 1 al 5: ");
+		printf("\n Seleccione del 1 al 5: \n\n\n\n");
 		fflush(stdin);
 
 		if(scanf("%d", &opcionBuffer) == 1)
@@ -176,7 +176,7 @@ int calcularFactorial(float* pResultado, float operando)
 		retorno = 0;
 		(*pResultado) = bufferFactorial;
 	}
-	if(operando == 0)
+	if(pResultado != NULL && operando == 0)
 	{
 		retorno = 0;
 		(*pResultado) = 1;
