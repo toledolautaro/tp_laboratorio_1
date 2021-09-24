@@ -164,7 +164,7 @@ int calcularDivision(float* pResultado, float operando1, float operando2)
 int calcularFactorial(float* pResultado, float operando)
 {
 	int retorno = -1;
-	float bufferFactorial;
+	float bufferFactorial = 1;
 	int i;
 
 	if(pResultado != NULL && operando > 0)
