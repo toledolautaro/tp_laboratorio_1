@@ -22,14 +22,18 @@ int utn_getNumeroFlotante(float* pResultado,char* pMensaje, char* pMensajeError)
 	int respuestaScan;
 	float floatBuffer;
 
-	printf("%s", pMensaje);
-	respuestaScan = scanf("%f", &floatBuffer);
-
-	while(respuestaScan == 0)
+	do
 	{
-		printf("%s", pMensajeError);
-		scanf("%f", &floatBuffer);
-	}
+		printf("%s", pMensaje);
+		fflush(stdin);
+		respuestaScan = scanf("%f", &floatBuffer);
+		if(respuestaScan == 0)
+		{
+			printf("%s", pMensajeError);
+		}
+
+	}while(respuestaScan == 0);
+
 	retorno = 0;
 	(*pResultado) = floatBuffer;
 
@@ -63,14 +67,14 @@ int menu(int* opcionSeleccionada, float operando1, float operando2)
 		printf("4- Informar resultados \n");
 		printf("5- Salir \n\n");
 
-		printf("\n Seleccione del 1 al 5: \n\n\n\n");
+		printf("\n Seleccione del 1 al 5: ");
 		fflush(stdin);
 
 		if(scanf("%d", &opcionBuffer) == 1)
 		{
 			flagIngresoCorrectoFloat = 0;
 		}
-
+		printf("\n\n\n\n");
 
 
 	}while( !(opcionBuffer >= 1 && opcionBuffer <= 5) || flagIngresoCorrectoFloat != 0 );

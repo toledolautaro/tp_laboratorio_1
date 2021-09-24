@@ -48,7 +48,7 @@ int main(void) {
 				{
 					do
 					{
-						respuestaPrimerOperando = utn_getNumeroFlotante(&primerOperando, "Ingrese 1er operando: ", "Error, eso no es un numero");
+						respuestaPrimerOperando = utn_getNumeroFlotante(&primerOperando, "Ingrese 1er operando: ", "Error, eso no es un numero \n");
 
 					}while(respuestaPrimerOperando == -1);
 
@@ -60,7 +60,7 @@ int main(void) {
 				{
 					do
 					{
-						respuestaSegundoOperando = utn_getNumeroFlotante(&segundoOperando, "Ingrese 2do operando: ", "Error eso no es un numero");
+						respuestaSegundoOperando = utn_getNumeroFlotante(&segundoOperando, "Ingrese 2do operando: ", "Error eso no es un numero \n");
 
 					}while(respuestaSegundoOperando == -1);
 
