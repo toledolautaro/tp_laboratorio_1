@@ -9,7 +9,13 @@
 
 
 
-
+/**
+ * \brief función que se utiliza para pedir un numero de tipo float al usuario
+ * \param pResultado -> puntero en donde se guardara el valor del float ingresado por el usuario
+ * \param pMensaje -> mensaje que el usuario ve antes de ingresar el dato
+ * \param pMensajeError -> mensaje de error que el usuario va a ver si no ingresa un dato valido
+ * \return la función retorna 0 si todo salio bien y -1 si hubo un error y no pudo cargarse el puntero pResultado
+ * */
 int utn_getNumeroFlotante(float* pResultado,char* pMensaje, char* pMensajeError)
 {
 	int retorno = -1;
@@ -30,7 +36,13 @@ int utn_getNumeroFlotante(float* pResultado,char* pMensaje, char* pMensajeError)
 	return retorno;
 }
 
-
+/**
+ * \brief función que se utiliza para mostrar un menu de opciones correspondientes al programa
+ * \param opcionSeleccionada -> puntero en donde se guardara el valor de la opcion seleccionada
+ * \param operando1 -> parametro que utilizo para poder mostrar el valor ingresado del primerOperando en el menu
+ * \param operando2 -> parametro que utilizo para poder mostrar el valor ingresado del segundoOperando en el menu
+ * \return la función retorna 0 si todo salio bien y -1 si hubo un error y no pudo cargarse el puntero opcionSeleccionada
+ * */
 int menu(int* opcionSeleccionada, float operando1, float operando2)
 {
 	int opcionBuffer;
@@ -69,6 +81,13 @@ int menu(int* opcionSeleccionada, float operando1, float operando2)
 	return retorno;
 }
 
+/**
+ * \brief función que se utiliza para calcular suma entre los operandos
+ * \param pResultado -> puntero en donde se guardara el resultado de la suma
+ * \param operando1 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \param operando2 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \return la función retorna 0 si todo salio bien y -1 si hubo un error y no pudo cargarse el puntero pResultado
+ * */
 int calcularSuma(float* pResultado, float operando1, float operando2)
 {
 	int retorno = -1;
@@ -80,6 +99,13 @@ int calcularSuma(float* pResultado, float operando1, float operando2)
 	return retorno;
 }
 
+/**
+ * \brief función que se utiliza para calcular la resta entre los operandos
+ * \param pResultado -> puntero en donde se guardara el resultado de la resta
+ * \param operando1 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \param operando2 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \return la función retorna 0 si todo salio bien y -1 si hubo un error y no pudo cargarse el puntero pResultado
+ * */
 int calcularResta(float* pResultado, float operando1, float operando2)
 {
 	int retorno = -1;
@@ -92,6 +118,13 @@ int calcularResta(float* pResultado, float operando1, float operando2)
 	return retorno;
 }
 
+/**
+ * \brief función que se utiliza para calcular la multiplicación entre los operandos
+ * \param pResultado -> puntero en donde se guardara el resultado de la multiplicación
+ * \param operando1 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \param operando2 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \return la función retorna 0 si todo salio bien y -1 si hubo un error y no pudo cargarse el puntero pResultado
+ * */
 int calcularMultiplicacion(float* pResultado, float operando1, float operando2)
 {
 	int retorno = -1;
@@ -104,11 +137,17 @@ int calcularMultiplicacion(float* pResultado, float operando1, float operando2)
 	return retorno;
 }
 
-/*Documentar funcion dividir*/
+/**
+ * \brief función que se utiliza para calcular la division entre los operandos
+ * \param pResultado -> puntero en donde se guardara el resultado de la división
+ * \param operando1 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \param operando2 -> dato ingresado por el usuario que se utiliza para hacer la operación
+ * \return la función retorna 0 si todo salio bien y -1 si hubo un error y no pudo cargarse el puntero pResultado
+ * */
 int calcularDivision(float* pResultado, float operando1, float operando2)
 {
 	int retorno = -1;
-	if(pResultado != NULL && operando2 != 0)
+	if(pResultado != NULL && operando2 != 0) //Si operando2 es igual a 0 existe un error ya que es una indeterminación
 	{
 		(*pResultado) = operando1 / operando2;
 		retorno = 0;
@@ -116,7 +155,13 @@ int calcularDivision(float* pResultado, float operando1, float operando2)
 	return retorno;
 }
 
-int calcularFactorial(float* pResultado, int operando)
+/**
+ * \brief función que se utiliza para calcular el factorial del numero ingresado
+ * \param pResultado -> puntero en donde se guardara el resultado del factorial
+ * \param operando -> dato ingresado por el usuario sobre el cual hara la operación la funcion
+ * \return la función retorna 0 si todo salio bien y -1 si hubo un error y no pudo cargarse el puntero pResultado
+ * */
+int calcularFactorial(float* pResultado, float operando)
 {
 	int retorno = -1;
 	float bufferFactorial;
@@ -124,7 +169,7 @@ int calcularFactorial(float* pResultado, int operando)
 
 	if(pResultado != NULL && operando > 0)
 	{
-		for(i = 0; i<operando; i++)
+		for(i = 1; i<=operando; i++)
 		{
 			bufferFactorial = bufferFactorial * i;
 		}

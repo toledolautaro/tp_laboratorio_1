@@ -38,7 +38,7 @@ int main(void) {
 
 	do
 	{
-		opcion = menu(&opcionSeleccionada);
+		opcion = menu(&opcionSeleccionada, primerOperando, segundoOperando);
 		if(opcion == 0)
 		{
 			switch(opcionSeleccionada)
@@ -53,9 +53,6 @@ int main(void) {
 					}while(respuestaPrimerOperando == -1);
 
 					flagIngresoPrimerOperando = 0; //Operando uno cargado correctamente
-
-					printf("Ingreso correcto: \n"); //borrar esto
-					printf("usted ingreso: %f", primerOperando); //borrar esto
 					break;
 				}
 
@@ -68,8 +65,6 @@ int main(void) {
 					}while(respuestaSegundoOperando == -1);
 
 					flagIngresoSegundoOperando = 0; //OPERANDO 2 CARGADO OK
-					printf("Ingreso correcto: \n"); //borrar esto
-					printf("usted ingreso: %f", segundoOperando); //borrar esto
 					break;
 				}
 				case 3:
@@ -79,7 +74,7 @@ int main(void) {
 						printf("El primer operando no está cargado, porfavor ingrese un numero \n");
 						while(flagIngresoPrimerOperando == -1)
 						{
-							respuestaPrimerOperando = utn_getNumeroFlotante(&primerOperando, "Ingrese 1er operando: ", "Error, eso no es un numero");
+							respuestaPrimerOperando = utn_getNumeroFlotante(&primerOperando, "Ingrese 1er operando: ", "Error, eso no es un numero \n");
 							flagIngresoPrimerOperando = 0;
 						}
 					}
@@ -88,7 +83,7 @@ int main(void) {
 						printf("El segundo operando no está cargado, porfavor ingrese un numero \n");
 						while(flagIngresoPrimerOperando == -1)
 						{
-							respuestaSegundoOperando = utn_getNumeroFlotante(&primerOperando, "Ingrese 2do operando: ", "Error, eso no es un numero");
+							respuestaSegundoOperando = utn_getNumeroFlotante(&primerOperando, "Ingrese 2do operando: ", "Error, eso no es un numero \n");
 							flagIngresoSegundoOperando = 0;
 						}
 					}
@@ -112,7 +107,7 @@ int main(void) {
 					}
 					else
 					{
-						printf("Hubo un error al calcular la suma (direccion de puntero invalida)");
+						printf("Hubo un error al calcular la suma \n");
 					}
 
 					if(respuestaResta == 0)
@@ -121,7 +116,7 @@ int main(void) {
 					}
 					else
 					{
-						printf("Hubo un error al calcular la resta (direccion de puntero invalida)");
+						printf("Hubo un error al calcular la resta \n");
 					}
 					if(respuestaMultiplicacion == 0)
 					{
@@ -129,7 +124,7 @@ int main(void) {
 					}
 					else
 					{
-						printf("Hubo un error al calcular la multiplicación (direccion de puntero invalida)");
+						printf("Hubo un error al calcular la multiplicación \n");
 					}
 					if(respuestaDivision == 0)
 					{
@@ -137,7 +132,7 @@ int main(void) {
 					}
 					else
 					{
-						printf("Error, NO es posible dividir por 0");
+						printf("Error, NO es posible dividir por 0 \n");
 					}
 					if(respuestaFactorialPrimerOperando == 0)
 					{
@@ -145,7 +140,7 @@ int main(void) {
 					}
 					else
 					{
-						printf("No se puede hacer factoriales de numeros negativos");
+						printf("No se puede hacer factoriales de numeros negativos \n");
 					}
 					if(respuestaFactorialPrimerOperando == 0)
 					{
@@ -153,7 +148,7 @@ int main(void) {
 					}
 					else
 					{
-						printf("No se puede hacer factoriales de numeros negativos");
+						printf("No se puede hacer factoriales de numeros negativos \n");
 					}
 					system("pause");
 					break;
@@ -168,10 +163,6 @@ int main(void) {
 					printf("Opcion no valida \n");
 					break;
 			}
-		}
-		else
-		{
-			printf("Error");
 		}
 	}while(opcionSeleccionada != 5);
 
